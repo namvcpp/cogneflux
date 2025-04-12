@@ -3,8 +3,8 @@ import { FiArrowRight } from 'react-icons/fi';
 
 export default function CTASection() {
   return (
-    <section className="full-bleed bg-blue-600 dark:bg-blue-700 text-white py-20 md:py-24">
-      <div className="banner-content">
+    <section className="bg-blue-600 dark:bg-blue-700 text-white py-20 md:py-24">
+      <div className="centered-content ">
         <h2 className="banner-title">
           Ready to Transform Your Learning Experience?
         </h2>
@@ -16,7 +16,7 @@ export default function CTASection() {
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
           <Link 
             href="/signup" 
-            className="w-full sm:w-auto inline-flex items-center justify-center bg-white text-blue-700 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition-colors shadow-lg"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-black text-blue-700 px-8 py-4 rounded-lg font-bold transition-colors shadow-lg"
           >
             Get Started For Free
             <FiArrowRight className="ml-2" />

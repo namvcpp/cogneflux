@@ -34,7 +34,7 @@ export default function Navbar() {
           </div>
           
           {/* Desktop navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div style={{ fontSize: '1.4em' }} className="hidden md:flex items-center gap-40">
             {navLinks.map(link => {
               if (link.auth && !isAuthenticated) return null;
               
@@ -42,7 +42,7 @@ export default function Navbar() {
                 <Link 
                   key={link.path}
                   href={link.path}
-                  className={`mx-2.5 px-3.5 py-2 rounded-md text-sm font-medium transition-colors
+                  className={`mx-2.5 px-3.5 py-2 rounded-md font-medium transition-colors
                     ${pathname === link.path 
                       ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700' 
                       : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700'}`}
@@ -59,7 +59,7 @@ export default function Navbar() {
               onClick={() => setIsDarkMode(!isDarkMode)}
               aria-label="Toggle dark mode"
             >
-              {isDarkMode ? <FiSun size={18} /> : <FiMoon size={18} />}
+              {isDarkMode ? <FiSun size={30} /> : <FiMoon size={30} />}
             </button>
             
             {isAuthenticated ? (
@@ -68,7 +68,7 @@ export default function Navbar() {
                 className="p-2.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                 aria-label="Profile"
               >
-                <FiUser size={18} />
+                <FiUser size={30} />
               </Link>
             ) : (
               <Link 

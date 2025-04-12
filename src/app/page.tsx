@@ -44,7 +44,7 @@ export default function Home() {
       </div>
       
       {/* Demo Visualization Section */}
-      <section className="banner-section full-bleed bg-gradient-soft py-20 md:py-28">
+      <section className="banner-section bg-gradient-soft py-20 md:py-28">
         <div className="banner-content">
           <h2 className="banner-title">See Knowledge in a New Way</h2>
           <p className="banner-description">
