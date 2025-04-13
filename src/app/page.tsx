@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       
       {/* Arrow Indicator */}
-      <div className="balanced-container text-center my-8">
+      <div className="text-center my-8">
         <div className="animate-bounce inline-block bg-blue-50 dark:bg-gray-800 p-2.5 rounded-full">
           <FiArrowDown className="text-blue-600 dark:text-blue-400 h-5 w-5" />
         </div>
@@ -22,7 +22,7 @@ export default function Home() {
       
       {/* Features Section */}
       <section className="section w-full">
-        <div className="adaptive-container">
+        <div className="">
           <div className="title-section">
             <h2 className="banner-title bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-700">
               Reimagine How You Learn
@@ -33,7 +33,7 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="balanced-container px-4 sm:px-6 md:px-8 lg:px-10">
+        <div className="px-4 sm:px-6 md:px-8 lg:px-10">
           <FeatureGrid />
         </div>
       </section>
@@ -61,7 +61,7 @@ export default function Home() {
       
       {/* Testimonials Section */}
       <section className="section w-full">
-        <div className="adaptive-container-wide">
+        <div className="">
           <div className="title-section">
             <h2 className="banner-title">What Learners Say</h2>
             <p className="banner-description">
@@ -87,7 +87,7 @@ export default function Home() {
       
       {/* Secondary CTA Section */}
       <section className="section-sm w-full">
-        <div className="adaptive-container">
+        <div className="">
           <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 md:p-10 shadow-md border border-gray-100 dark:border-gray-700 w-full">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
               <div className="w-full md:w-2/3 md:pr-6">
