@@ -30,40 +30,47 @@ const testimonials = [
 
 const TestimonialSlider: React.FC = () => {
   return (
-    <div className="grid gap-8 md:grid-cols-3">
+    <div className="grid gap-10 md:grid-cols-3">
       {testimonials.map((testimonial) => (
-        <div 
-          key={testimonial.id} 
-          className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow"
-        >
-          <div className="flex mb-4">
-            {[...Array(5)].map((_, i) => (
-              <FiStar 
-                key={i} 
-                className={`${i < testimonial.rating ? 'text-yellow-400 fill-current' : 'text-gray-300 dark:text-gray-600'} w-5 h-5`} 
-              />
-            ))}
-          </div>
-          
-          <p className="text-gray-600 dark:text-gray-300 italic mb-6">"{testimonial.quote}"</p>
-          
-          <div className="flex items-center">
-            <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white">
-              {/* Uncomment when you have actual images */}
-              {/* <Image 
-                src={testimonial.avatar} 
-                alt={testimonial.name} 
-                width={48} 
-                height={48} 
-              /> */}
-              <span className="text-xl font-bold">{testimonial.name[0]}</span>
-            </div>
-            <div>
-              <h4 className="font-bold">{testimonial.name}</h4>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</p>
-            </div>
-          </div>
+      <div
+        key={testimonial.id}
+        className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+      >
+        <div className="flex mb-5">
+        {[...Array(5)].map((_, i) => (
+          <FiStar
+          key={i}
+          className={`${
+            i < testimonial.rating
+            ? 'text-yellow-400 fill-yellow-400'
+            : 'text-gray-300 dark:text-gray-600'
+          } w-5 h-5`}
+          />
+        ))}
         </div>
+
+        <p className="text-gray-700 dark:text-gray-300 text-lg mb-6 leading-relaxed before:content-['“'] before:mr-1 before:font-serif before:text-2xl before:text-gray-400 dark:before:text-gray-600 after:content-['”'] after:ml-1 after:font-serif after:text-2xl after:text-gray-400 dark:after:text-gray-600">
+        {testimonial.quote}
+        </p>
+
+        <div className="flex items-center">
+        <div className="w-14 h-14 rounded-full overflow-hidden mr-4 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shadow-sm flex-shrink-0">
+          {/* Uncomment when you have actual images */}
+          {/* <Image
+          src={testimonial.avatar}
+          alt={testimonial.name}
+          width={56}
+          height={56}
+          className="object-cover"
+          /> */}
+          <span className="text-2xl font-semibold">{testimonial.name[0]}</span>
+        </div>
+        <div>
+          <h4 className="font-semibold text-lg text-gray-800 dark:text-white">{testimonial.name}</h4>
+          <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">{testimonial.role}</p>
+        </div>
+        </div>
+      </div>
       ))}
     </div>
   );

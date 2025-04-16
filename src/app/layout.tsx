@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google';
-import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
+import './globals.css'; // Re-add CSS import
 
 export const metadata: Metadata = {
   title: 'Cogneflux - Dynamic Knowledge Learning',
@@ -21,11 +14,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={inter.className}>
-        <div className="min-h-screen flex flex-col">
+    // Add 'dark' class if implementing dark mode toggle
+    <html lang="en" className="antialiased"> 
+      <body className="bg-background text-foreground">
+        <div className="flex flex-col min-h-screen">
           <Navbar />
-          <main className="flex-grow">{children}</main>
+          {/* Add padding and ensure main content grows */}
+          <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            {children}
+          </main>
           <Footer />
         </div>
       </body>

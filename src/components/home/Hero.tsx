@@ -1,44 +1,33 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { FiArrowRight } from 'react-icons/fi';
 
 export default function Hero() {
   return (
-    <section className="hero-banner w-full bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <div className="adaptive-container-wide">
-        <div className="flex flex-col items-center text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 max-w-4xl mx-auto text-balance">
-            Reimagine Learning Through <span className="text-blue-600 dark:text-blue-400">Connection</span>
+    // Add padding, text alignment
+    <section className="py-20 md:py-28 text-center">
+      {/* Use a container to constrain width */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        {/* Vertical spacing for elements */}
+        <div className="space-y-6">
+          {/* Large heading with gradient text */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+            Reimagine Learning Through <span className="whitespace-nowrap">Connection</span>
           </h1>
           
-          <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto text-balance">
+          {/* Subheading/Paragraph */}
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Transform your understanding with interactive visualizations that connect concepts and enhance retention.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          {/* Action Buttons - Single primary CTA */}
+          <div className="button-group justify-center pt-4">
             <Link 
-              href="/signup" 
-              className="btn-primary text-lg py-3 px-8"
+              href="/signup"
+              className="btn btn-primary px-8 py-3 text-lg" // Slightly larger button for emphasis
             >
-              Get Started <FiArrowRight className="ml-1" />
+              Get Started <FiArrowRight className="ml-2 h-5 w-5" />
             </Link>
-            
-            <Link 
-              href="/lessons" 
-              className="btn-secondary text-lg py-3 px-8"
-            >
-              Explore Lessons
-            </Link>
-          </div>
-          
-          <div className="relative w-full max-w-5xl h-[350px] md:h-[450px] rounded-xl overflow-hidden shadow-xl">
-            <Image 
-              src="/images/dashboard-preview.jpg" 
-              alt="Cogneflux Dashboard Preview" 
-              fill
-              className="object-cover object-center"
-              priority
-            />
+            {/* Removed the Explore Lessons button */}
           </div>
         </div>
       </div>

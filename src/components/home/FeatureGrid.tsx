@@ -16,12 +16,16 @@ type FeatureProps = {
 };
 
 const Feature = ({ title, description, icon: Icon, color }: FeatureProps) => (
-  <div className="p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all hover:translate-y-[-5px] bg-white dark:bg-gray-800">
-    <div className={`w-14 h-14 flex items-center justify-center rounded-full ${color} mb-6`}>
+  <div className="p-4 flex flex-col items-center rounded-xl border border-gray-100 dark:border-gray-800 hover:shadow-md transition-all">
+    <div className={`mb-2 p-3 rounded-full ${color}`}>
       <Icon size={24} />
     </div>
-    <h3 className="text-xl font-bold mb-3">{title}</h3>
-    <p className="text-gray-600 dark:text-gray-300">{description}</p>
+    <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-2">
+      {title}
+    </h3>
+    <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 text-center leading-relaxed">
+      {description}
+    </p>
   </div>
 );
 
@@ -66,7 +70,7 @@ const features = [
 
 export default function FeatureGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8">
       {features.map((feature, index) => (
         <Feature key={index} {...feature} />
       ))}
