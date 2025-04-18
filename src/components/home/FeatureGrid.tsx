@@ -70,9 +70,15 @@ const features = [
 
 export default function FeatureGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl md:gap-lg">
       {features.map((feature, index) => (
-        <Feature key={index} {...feature} />
+        <div key={index} className="card flex flex-col items-center text-center">
+          <div className={`icon-container icon-lg mb-lg ${feature.color}`}>
+            <feature.icon className="icon" />
+          </div>
+          <h3 className="font-semibold text-xl mb-md">{feature.title}</h3>
+          <p className="text-muted">{feature.description}</p>
+        </div>
       ))}
     </div>
   );

@@ -287,9 +287,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: var(--font-bold);
   color: var(--color-foreground);
-  letter-spacing: var(--tracking-tight);
+  letter-spacing: var(--tracking-normal);
   line-height: var(--leading-tight);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
 }
 
 h1 {
@@ -325,9 +325,9 @@ h6 {
 
 p {
   font-size: var(--text-base);
-  color: var(--color-muted);
+  color: var(--color-gray-600);
   line-height: var(--leading-relaxed);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 }
 
 small {
@@ -352,10 +352,11 @@ code, pre, kbd, samp {
 a {
   color: var(--color-primary);
   text-decoration: none;
-  transition: var(--transition-colors);
+  transition: color 0.2s;
   outline: none;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-full);
   padding: 0 2px;
+  font-weight: var(--font-medium);
 }
 
 a:hover {
@@ -366,7 +367,7 @@ a:focus-visible {
   box-shadow: var(--shadow-outline);
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
-  background: var(--color-primary-focus);
+  background: var(--color-primary-50);
 }
 
 a.underline {
@@ -733,9 +734,9 @@ a.underline:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  border-radius: var(--radius-md);
-  font-weight: var(--font-medium);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-semibold);
   line-height: var(--leading-normal);
   text-align: center;
   text-decoration: none;
@@ -748,10 +749,11 @@ a.underline:hover {
   margin: 0;
   min-height: 2.5rem;
   touch-action: manipulation;
-  min-width: 7rem;
-  box-shadow: var(--shadow-sm);
+  min-width: 0;
+  box-shadow: none;
   border: none;
   outline: none;
+  letter-spacing: var(--tracking-wide);
 }
 
 .btn + .btn {
@@ -766,7 +768,7 @@ a.underline:hover {
 .btn-primary {
   background-color: var(--color-primary);
   color: white;
-  border: 1px solid transparent;
+  border: none;
   background: var(--color-primary);
 }
 
@@ -806,19 +808,19 @@ a.underline:hover {
 .btn-outline {
   background-color: transparent;
   color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  border: 1.5px solid var(--color-primary);
   background: transparent;
 }
 
 .btn-outline:hover {
-  background-color: var(--color-primary-focus);
+  background-color: var(--color-primary-50);
   color: var(--color-primary-hover);
 }
 
 .btn-outline:hover,
 .btn-outline:focus-visible {
-  background: var(--color-primary-focus);
-  color: var(--color-primary-hover);
+  background: var(--color-primary-50);
+  color: var (--color-primary-hover);
 }
 
 .btn-ghost {
@@ -893,7 +895,6 @@ a.underline:hover {
   border-radius: var(--radius-full);
 }
 
-
 /* Button states */
 .btn-disabled, .btn[disabled] {
   opacity: 0.6;
@@ -903,17 +904,16 @@ a.underline:hover {
 
 /* Enhanced Card Styles */
 .card {
-  background-color: white;
+  background-color: var(--color-subtle);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   padding: var(--spacing-xl);
   transition: var(--transition);
   overflow: hidden;
   position: relative;
-  border: 1px solid var(--color-border);
-  margin-bottom: var(--spacing-lg);
-  background: #fff;
-  margin-bottom: var(--spacing-xl);
+  border: none;
+  margin-bottom: var(--spacing-2xl);
+  background: var(--color-subtle);
   transition: box-shadow 0.2s;
 }
 
@@ -923,9 +923,8 @@ a.underline:hover {
 }
 
 .card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
 }
 
 .card-flat {
@@ -959,7 +958,7 @@ a.underline:hover {
 }
 
 .card-bordered {
-  border: 1px solid var(--color-border);
+  border: none;
 }
 
 .card-content {
@@ -1511,11 +1510,11 @@ input, textarea, select, button {
 
 /* Section Spacing */
 .section {
-  padding-block: var(--spacing-xl);
-  margin-bottom: var(--spacing-xl);
-  padding-block: var(--spacing-2xl);
-  background: var(--color-subtle);
-  border-radius: var(--radius-lg);
+  padding-block: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
+  background: var(--color-background);
+  border-radius: var(--radius-xl);
+  box-shadow: none;
 }
 
 .section-sm {
@@ -1611,7 +1610,6 @@ input, textarea, select, button {
   stroke: var(--color-primary);
   stroke-width: 2;
 }
-
 
 /* Form element spacing */
 .form-group {
@@ -1746,16 +1744,6 @@ input, textarea, select, button {
   transform: translateY(1px);
 }
 
-/* Remove excess spacing in nested elements */
-.card .card {
-  margin-bottom: 0;
-}
-
-.section .section {
-  margin-bottom: 0;
-  padding-block: 0;
-}
-
 /* Custom property for element-specific spacing */
 :root {
   --el-spacing: var(--spacing-md);
@@ -1790,8 +1778,45 @@ input, textarea, select, button {
 .elevation-5 { box-shadow: var(--shadow-2xl); }
 
 /* Utility: Remove margin from last child */
-.content-spacing > *:last-child,
-.section > *:last-child,
-.card > *:last-child {
-  margin-bottom: 0;
+
+/* --- Section Title Style --- */
+.section-title, .text-section-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-foreground);
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--leading-tight);
+}
+
+/* --- Subtle Muted Text --- */
+.text-muted, .muted {
+  color: var(--color-gray-400);
+}
+
+/* --- More Spacing Between Sections --- */
+.space-y-section > * + * {
+  margin-top: var(--spacing-3xl);
+}
+
+/* --- Footer Modernization --- */
+footer, .footer {
+  background: var(--color-background);
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--spacing-2xl);
+  font-size: var(--text-sm);
+}
+
+footer a, .footer a {
+  color: var(--color-primary);
+  font-weight: var(--font-medium);
+  border-radius: var(--radius-full);
+  padding: 0 2px;
+}
+
+footer a:hover, .footer a:focus-visible {
+  color: var(--color-primary-hover);
+  background: var(--color-primary-50);
+  text-decoration: underline;
 }
