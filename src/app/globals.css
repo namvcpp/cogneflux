@@ -1119,7 +1119,7 @@ a.underline:hover {
 /* Shadow utilities */
 .shadow-none { box-shadow: none; }
 .shadow-xs { box-shadow: var(--shadow-xs); }
-.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-sm { box-shadow: 0 1px 4px 0 rgba(0,0,0,0.04), 0 1.5px 4px 0 rgba(0,0,0,0.06); }
 .shadow-md { box-shadow: var(--shadow-md); }
 .shadow-lg { box-shadow: var(--shadow-lg); }
 .shadow-xl { box-shadow: var(--shadow-xl); }
@@ -1474,39 +1474,6 @@ input, textarea, select, button {
   display: none;
 }
 
-/* Content Spacing Classes - For Consistent Spacing */
-.content-spacing > * + * {
-  margin-top: var(--spacing-md);
-}
-
-.content-spacing-sm > * + * {
-  margin-top: var(--spacing-sm);
-}
-
-.content-spacing-lg > * + * {
-  margin-top: var(--spacing-lg);
-}
-
-.content-spacing-xl > * + * {
-  margin-top: var(--spacing-xl);
-}
-
-.content-spacing > * + * {
-  margin-top: var(--spacing-lg);
-}
-
-/* Horizontal Spacing for Inline Elements */
-.inline-spacing > * + * {
-  margin-left: var(--spacing-md);
-}
-
-.inline-spacing-sm > * + * {
-  margin-left: var(--spacing-sm);
-}
-
-.inline-spacing-lg > * + * {
-  margin-left: var(--spacing-lg);
-}
 
 /* Section Spacing */
 .section {
